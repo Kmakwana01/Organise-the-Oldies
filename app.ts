@@ -11,9 +11,11 @@ require('dotenv').config()
 // const mongodbPath: any = process.env.MONGO_URL || "mongodb+srv://kmakwana1255:kmakwana@cluster1.hfoy8xo.mongodb.net/test?retryWrites=true&w=majority";
 
 
+
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://kmakwana1255:kmakwana@cluster1.hfoy8xo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1";
 
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -34,8 +36,8 @@ async function run() {
     await client.close();
   }
 }
-
 run().catch(console.dir);
+
 
 import userRouter from './routes/userRoute';
 import siblingAndGrandParentRouter from './routes/siblingAndGrandParentRoute';
@@ -84,15 +86,15 @@ app.use('/medicinesTaken', medicinesTakenRouter);
 import cron from 'node-cron';
 import { trashFileRemove } from './controller/cronJobController';
 
-cron.schedule('* * * * * *', () => {
-  trashFileRemove()
-});
+// cron.schedule('* * * * * *', () => {
+//   trashFileRemove()
+// });
 
 import { medicinesMail } from './util/email';
 
-cron.schedule('30 * * * *', () => {
-  medicinesMail()
-})
+// cron.schedule('30 * * * *', () => {
+//   medicinesMail()
+// })
 
 // catch 404 and forward to error handler
 app.use((req: Request, res: Response, next: NextFunction) => {
