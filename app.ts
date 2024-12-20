@@ -10,9 +10,9 @@ import { verifyToken } from "./middleware/auth";
 require('dotenv').config()
 const mongodbPath: any = process.env.MONGO_URL || "mongodb+srv://kmakwana1255:kmakwana@cluster1.hfoy8xo.mongodb.net/test?retryWrites=true&w=majority";
 
-mongoose.connect(mongodbPath)
-  .then(() => console.log('Connected!'))
-  .catch((err) => console.log(err.message))
+mongoose.connect(mongodbPath || "mongodb+srv://kmakwana1255:kmakwana@cluster1.hfoy8xo.mongodb.net/test?retryWrites=true&w=majority", {})
+  .then(() => console.log('Connected to MongoDB!'))
+  .catch(error => console.error('Error connecting to MongoDB:', error.message));
 
 import userRouter from './routes/userRoute';
 import siblingAndGrandParentRouter from './routes/siblingAndGrandParentRoute';
