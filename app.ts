@@ -8,7 +8,7 @@ import cors from 'cors';
 import { verifyToken } from "./middleware/auth";
 
 require('dotenv').config()
-const mongodbPath: any = process.env.MONGO_URL || "mongodb://localhost:27017/OTO";
+const mongodbPath: any = process.env.MONGO_URL || "mongodb+srv://kmakwana1255:kmakwana@cluster1.hfoy8xo.mongodb.net/test?retryWrites=true&w=majority";
 
 mongoose.connect(mongodbPath)
   .then(() => console.log('Connected!'))
