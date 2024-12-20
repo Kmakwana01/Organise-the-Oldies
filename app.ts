@@ -83,8 +83,8 @@ app.use('/subscription', subscriptionRouter);
 app.use('/sendMailUser', sendMailUserRouter);
 app.use('/medicinesTaken', medicinesTakenRouter);
 
-import cron from 'node-cron';
-import { trashFileRemove } from './controller/cronJobController';
+// import cron from 'node-cron';
+// import { trashFileRemove } from './controller/cronJobController';
 
 // cron.schedule('* * * * * *', () => {
 //   trashFileRemove()
