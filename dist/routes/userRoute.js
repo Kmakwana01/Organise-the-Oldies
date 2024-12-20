@@ -1,0 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+var router = express_1.default.Router();
+const userController_1 = require("../controller/userController");
+const auth_1 = require("../middleware/auth");
+router.post('/signup', userController_1.signup);
+router.post('/login', userController_1.login);
+router.post('/token', userController_1.token);
+router.post('/forgotPassword', userController_1.forgotPassword);
+router.post('/compareCode', userController_1.compareCode);
+router.post('/resetPassword', userController_1.resetPassword);
+router.post('/logout', userController_1.logout);
+router.post('/tokenVerify', userController_1.tokenVerify);
+router.post('/updateFcmToken', auth_1.verifyToken, userController_1.updateFcmToken);
+router.post('/googleAuth', userController_1.googleAuth);
+router.post('/appleAuth', userController_1.appleAuth);
+exports.default = router;

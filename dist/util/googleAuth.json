@@ -1,0 +1,12 @@
+{
+    "web": {
+        "client_id": "494043634835-nt3f0ri6nmjl98nc9rb0seuh35tepov7.apps.googleusercontent.com",
+        "project_id": "organise-the-oldies-bc7a5",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "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",
+        "redirect_uris": ["https://organise-the-oldies-bc7a5.firebaseapp.com/__/auth/handler"],
+        "javascript_origins": ["http://localhost", "http://localhost:5000", "https://organise-the-oldies-bc7a5.firebaseapp.com"]
+    }
+}
